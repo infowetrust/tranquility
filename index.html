@@ -1,12 +1,200 @@
+
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Page Title</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Seeing Tranquility</title>
+	<meta name="description" content="Scrollama: Sticky Overlay Example">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='stylesheet' href='style.css'>
 </head>
+
 <body>
+	<main>
+		<section id='intro'>
+            <h1 class='intro__hed'>Seeing Tranquility</h1>
+			<p class='intro__dek'>
+                    The hatch of Apollo 11’s Lunar Module Eagle was open for two hours and thirty-two minutes on the surface of the Moon. 
+                    During that time <span class="n">NEIL ARMSTRONG</span> and <span class="b">BUZZ ALDRIN</span> explored an area about the size of a baseball diamond called called Tranquility Base.<br><br>Armstrong and Aldrin collected 48 pounds of rock samples, made geologic observations, deployed experiments, took footage, received a phonecall from President Nixon, and inspected the condition of the Lunar Module (LM or <i>lem</i>) that would soon blast them back to Michael Collins, orbiting above in the Command Module.<br><br> <b><i>SCROLL</b></i> for highlights from the Apollo 11 Transcript, all color-coded to speaker and listed with time since hatch opening.
+			</p>
+        </section>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+		<section id='scrolly'>
 
+			<figure>
+                <!--<p>0</p>-->
+                <img src="media/Moon-0.jpg" id="moon" width="100%"> 
+			</figure>
+
+            <!--Transcript goes here-->
+			<article>
+				<div class='step' data-step='1'>
+                    <p>hr:mn<br>00:08</p>
+                    <ul>
+                        <li class="buzz">About ready to go down and get some Moon rock?</li>
+                    </ul>
+                    
+				</div>
+				<div class='step' data-step='2'>
+                    <p>00:16</p>
+                    <ul>
+                        <li class="neil">I’m at the foot of the ladder. The LM footpads are only depressed in the surface about 1 or 2 inches, although the surface appears to be very, very fine grained, as you get close to it. It’s almost like a powder. Down there, it’s very fine.</li>
+                        <li class="neil">I’m going to step off the LM now.</li>
+                        <li class="neil">THAT'S ONE SMALL STEP FOR (A) MAN, ONE GIANT LEAP FOR MANKIND</li>
+                        <li class="neil">And the - the surface is fine and powdery. I can - I can pick it up loosely with my toe. It does adhere in fine layers like powdered charcoal to the sole and sides of my boots. I only go in a small fraction of an inch, maybe an eighth of an inch, but I can see the footprints of my boots and the treads in the fine, sandy particles.</li>
+                    </ul>
+                    
+				</div>
+				<div class='step' data-step='3'>
+                    <p>00:27</p>
+                    <ul>
+                        <li class="buzz">That looks beautiful from here, Neil.</li>
+                        <li class="neil">It has a stark beauty all its own. It’s like much of the high desert of the United States. It’s different but it’s very pretty out here. </li>
+                        <!--Be advised that a lot of the rock samples out here, the hard rock samples, have what appear to be vesicles in the surface. Also, I am looking at one now that appears to have some sort of phenocryst.-->
+                    </ul>
+                </div>
+                <div class='step' data-step='4'>
+                        <p>00:34</p>
+                        <ul>
+                            <li class="buzz">Okay. Now I want to back up and partially close the hatch.</li>
+                            <li class="buzz">Making sure not to lock it on my way out.</li>
+                            <li class="neil">(Laughter) A pretty good thought.</li>
+                            <li class="buzz">That’s our home for the next couple of hours and we want to take good care of it.</li>
+                            <li class="comment">...</li>                            
+                        </ul>
+                        <img src="media/ladder.jpg" alt="none" class="chat">
+                        <ul>
+                            <li class="neil">A little more. About another inch.</li>
+                            <li class="neil">THERE YOU GOT IT.</li>
+                            <li class="neil">That’s a good step. About a 3-footer.</li>
+                            <li class="buzz">Beautiful view!</li>
+                            <li class="neil">Isn’t that something! Magnificent sight out here.</li>
+                            <li class="buzz">Magnificent desolation.</li>
+                        </ul>
+
+                </div>
+                <div class='step' data-step='5'>
+                        <p>STEP 5</p>
+                </div>
+                <div class='step' data-step='6'>
+                        <p>STEP 6</p>
+                </div>
+                <div class='step' data-step='7'>
+                        <p>STEP 7</p>
+                </div>
+
+				<div class='step' data-step='8'>
+                    <p>STEP 8</p>
+                    <ul>
+                            <li class="buzz">Hey, you want to take a look at this BB and see what you make out of it?</li>
+                            <li class="neil">I find it pretty hard to get perfectly level, too.</li>
+                            <li class="buzz">That BB likes the outside. It won’t go on the inside.</li>
+                            <li class="neil">That little cup is convex now, instead of concave.</li>
+                            <li class="buzz">I think you’re right.</li>
+                            <li class="comment"> ... </li>
+                            <li class="buzz">Houston, I don’t think there’s any hope for using this leveling device to come up with an accurate level. It looks to me as though the cup here that the BB is in is now convex instead of concave.</li>
+                            <li class="capcom">Over. Roger, 11. Press on. If you think it looks level by eyeball, go ahead.</li>
+                            <li class="comment"> ... </li>
+                            <li class="neil">Oh, shoot. Would you believe the ball is right in the middle now?</li>
+                            <li class="buzz">Wonderful. Take a picture before it moves.</li>
+                        </ul>
+				</div>
+			</article>
+
+			
+		</section>
+
+		<section id='outro'></section>
+	</main>
+	
+	<!-- <div class='debug'></div> -->
+	<script src='https://unpkg.com/d3@5.9.1/dist/d3.min.js'></script>
+	<script src='https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js'></script>
+    <script src='stickyfill.min.js'></script>
+	<script src='scrollama.min.js'></script>
+	<script>
+		// using d3 for convenience
+		var main = d3.select('main')
+		var scrolly = main.select('#scrolly');
+		var figure = scrolly.select('figure');
+		var article = scrolly.select('article');
+        var step = article.selectAll('.step');
+        var figureHeight = window.innerWidth / 6.67;
+
+		// initialize the scrollama
+		var scroller = scrollama();
+
+		// generic window resize listener event
+		function handleResize() {
+            // 1. update height of step elements
+            //TK need to update this to length of text
+			//var stepH = Math.floor(window.innerWidth * 0.75);
+			//step.style('height', stepH + 'px');
+
+            //original:
+            //var figureHeight = window.innerHeight / 2
+			
+            //var figureMarginTop = (window.innerHeight - figureHeight) / 2  
+            var figureMarginTop = (window.innerHeight - figureHeight);
+
+			figure
+				.style('height', figureHeight + 'px')
+				.style('top', figureMarginTop + 'px');
+
+			// 3. tell scrollama to update new element dimensions
+			scroller.resize();
+		}
+
+        // scrollama event handlers
+
+        function handleStepEnter(response) {
+			console.log(response)
+			// response = { element, direction, index }
+
+			// add color to current step only
+			step.classed('is-active', function (d, i) {
+				return i === response.index;
+			})
+
+			// update graphic based on step
+            figure.select('p').text(response.index + 1);
+
+            //update moon image
+            document.getElementById('moon').src = ("media/Moon-" + response.index + ".jpg");
+            
+		}
+
+		function setupStickyfill() {
+			d3.selectAll('.sticky').each(function () {
+				Stickyfill.add(this);
+			});
+		}
+
+		function init() {
+			setupStickyfill();
+			// 1. force a resize on load to ensure proper dimensions are sent to scrollama
+			handleResize();
+
+			// 2. setup the scroller passing options
+			// 		this will also initialize trigger observations
+			// 3. bind scrollama event handlers (this can be chained like below)
+			scroller.setup({
+				step: '#scrolly article .step',
+				offset: .7,
+				debug: true,
+			})
+				.onStepEnter(handleStepEnter)
+
+
+			// setup resize event
+			window.addEventListener('resize', handleResize);
+		}
+
+		// kick things off
+		init();
+	</script>
 </body>
+
 </html>
