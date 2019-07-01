@@ -10,18 +10,27 @@ background-color: black;
 }
 
 :root {
---neil-color: red;
---buzz-color: royalblue; 
+--neil-color: maroon;
+--buzz-color: royalblue;
+--mike-color: gold; 
 }
 
-img.chat {
+img.img-n {
     border-radius: 10%;
-    height: 190px;
-    width: 190px;
+    width: 50%;
     clear: both;
     margin-bottom: 2px;
     padding-left: 5px;
     float: left;
+}
+
+img.img-c {
+  border-radius: 10%;
+  width: 100%;
+  clear: both;
+  margin-bottom: 2px;
+  padding-left: 5px;
+  float: left;
 }
 
 span.n {
@@ -35,7 +44,60 @@ font-weight: bold;
 color: white;
 background: var(--buzz-color);
 }
-  
+
+span.m {
+  font-weight: bold;
+  color: var(--mike-color);
+  }
+
+.module {
+  height: 75px;
+  opacity: 0;
+}
+
+.slideLeft {
+  opacity: 100;
+  color: rgba(0,0,0,0);
+  text-decoration: none;
+  padding-right: 20px;
+  left: 50%;
+  position: absolute;
+  -webkit-animation: slideLeft 10s;
+  animation: slideLeft 10s;
+}
+
+/*animation links
+https://jsfiddle.net/apaul34208/ozww5cvj/18/
+https://css-tricks.com/controlling-css-animations-transitions-javascript/
+*/
+
+@keyframes slideLeft {
+  from {
+      left: 150%;
+  }
+  to {
+      left: -150%;
+  }
+}
+
+@-webkit-keyframes slideLeft {
+from {
+    left: 150%;
+}
+to {
+    left: -150%;
+}
+}
+
+/*.slideLeft {
+  animation-name: slideLeft;
+  -webkit-animation-name: slideLeft;
+  animation-duration: 5s;
+  -webkit-animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+}*/
+
 body {
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -62,18 +124,19 @@ font-size: 24px;
 
 #intro {
     max-width: 40rem;
-    margin: 1rem auto;
-    text-align: center;
+    /* top right bottom left*/
+    margin: 1rem auto 0.5rem auto;
   }
   
   .intro__hed {
     font-size: 2em;
     text-align: center;
-    margin: 2rem auto 0.5rem auto;
   }
   
   .intro__dek {
     text-align: justify;
+    /* top left-right bottom*/
+    margin: 1rem 2rem 1rem;
     color: gainsboro;
   }
 
@@ -92,6 +155,7 @@ figure {
     left: 0;
     width: 100%;
     margin: 0;
+    pointer-events: none;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -142,7 +206,7 @@ figure p {
   a,
   a:visited,
   a:hover {
-    color: teal;
+    color: rgba(0,0,0,0));
     text-decoration: none;
     border-bottom: 2px solid currentColor;
   }
@@ -204,7 +268,7 @@ figure p {
   .capcom{
     margin-left: 10%;
     width: 80%;
-    text-align: center;
+    text-align: justify;
     background: rgba(0,0,0,0);
     color: #fff;
   }
@@ -213,9 +277,18 @@ figure p {
     margin-left: 10%;
     width: 80%;
     text-align: center;
-    font-style: italic;
+    text-transform: uppercase;
+    font-family: Courier, Helvetica, sans-serif;
     background: rgba(0,0,0,0);
-    color: white;
+    color: grey;
+  }
+
+  .mike{
+    margin-left: 20%;
+    width: 70%;
+    text-align: justify;
+    background: rgba(0,0,0,0);
+    color: var(--mike-color);;
   }
   
   .neil{
@@ -223,6 +296,12 @@ figure p {
     background: var(--neil-color);
     color: #fff;
     border-bottom-left-radius: 5px;
+  }
+
+  .neiltag{
+    float: left;
+    color: var(--neil-color);
+    font-family: Courier, Helvetica, sans-serif;
   }
 
   .neil + .neil{
