@@ -64,6 +64,8 @@ span.m {
   position: absolute;
   -webkit-animation: slideLeft 10s;
   animation: slideLeft 10s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 /*animation links
@@ -147,6 +149,52 @@ article {
     margin: 0 auto;
     z-index: 9;
 }
+
+.header {
+  opacity: 0;
+  position: fixed;
+  background-color: rgba(25,25,25,100);
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+  height: 4rem;
+  z-index: 10;
+}
+
+.header-p {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.armstrong {
+  float: left;
+  color: var(--neil-color);
+  font-weight: bold;
+}
+
+.aldrin {
+  float: right;
+  color: var(--buzz-color);
+  font-weight: bold;
+}
+
+.header-c {
+  opacity: 0;
+  position: fixed;
+  text-align: center;
+  background-color: rgba(0,0,0,0));
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+  height: 4rem;
+  z-index: 10;
+}
+
+.collins {
+  color: var(--mike-color);
+  font-weight: 500;
+}
+
 
 /*sticky*/
 figure {
@@ -288,7 +336,7 @@ figure p {
     width: 70%;
     text-align: justify;
     background: rgba(0,0,0,0);
-    color: var(--mike-color);;
+    color: var(--mike-color);
   }
   
   .neil{
