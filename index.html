@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Seeing Tranquility</title>
+	<title>Neil & Buzz</title>
 	<meta name="description" content="Scrollama: Sticky Overlay Example">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel='stylesheet' href='style.css'>
@@ -14,14 +14,14 @@
 <body>
 	<main>
 		<section id='intro'>
-            <h1 class='intro__hed'>Seeing Tranquility</h1>
+            <h1 class='intro__hed'>Neil & Buzz Take a Walk</h1>
+            <h3 class='intro__credit'>A data story by RJ Andrews.</h3>
 			<p class='intro__dek'>
-                    The hatch of Apollo 11’s Lunar Module Eagle was open for 2 hours and 32 minutes on the surface of the Moon.<br>
+                    <br>The hatch of Apollo 11’s Lunar Module <i>Eagle</i> was open for 2 hours and 32 minutes on the surface of the Moon.<br>
                     <br>
-                    During that time <span class="n">&nbsp;NEIL ARMSTRONG&nbsp;</span> and <span class="b">&nbsp;BUZZ ALDRIN&nbsp;</span> explored an area about the size of a baseball diamond called called Tranquility Base. They collected 48 pounds of samples, made geologic observations, setup experiments, shot photographs and video, received a phonecall from President Nixon, and inspected the condition of the Lunar Module that would soon blast them back to <span class="m">MICHAEL COLLINS</span>, orbiting above in the Command Module.<br>
-                    <br>
-                    <i>Highlights from the Apollo 11 Transcript are color-coded to speaker and presented with time since hatch opening.</i>
-			</p>
+                    During that time <span class="n">&nbsp;NEIL ARMSTRONG&nbsp;</span> and <span class="b">&nbsp;BUZZ ALDRIN&nbsp;</span> explored an area about the size of a baseball diamond called <i>Tranquility Base</i> before blasting back to <span class="m">MICHAEL COLLINS</span>, orbiting above in the Command Module.<br><br>
+            </p>
+            <p class="intro__call">SCROLL TO SEE THEIR ADVENTURE.</p>
         </section>
 
         <div class="header" id="labels">    
@@ -31,17 +31,23 @@
                     <span class="aldrin">BUZZ</span>
                 </p><br>
                 <p>
-                    <span class="armstrong">ARMSTRONG</span>
-                    <span class="aldrin">ALDRIN</span>
+                    <!--<span class="armstrong">ARMSTRONG</span>
+                    <span class="aldrin">ALDRIN</span>-->
                 </p>
             </div>
         </div>
 
         <div class="header-c" id="collins">
                 <p>
-                    <span class="collins">MICHAEL</span><br>
-                    <span class="collins">COLLINS</span>
+                    <span class="collins">MIKE</span><br>
                 </p>
+        </div>
+
+        <div class="footer" id="time">    
+            <p>
+                <span class="time-l" id="timel">00:00</span>
+                <span class="time-r" id="timer">02:32</span>
+            </p>
         </div>
 
 		<section id='scrolly'>
@@ -53,8 +59,14 @@
 
             <!--Transcript goes here-->
 			<article>
+                <div class='step' data-step='0'>
+                    <p>hr:mn</p>
+                    <ul>
+                        <li class="comment">Highlights from the Apollo 11 Transcript are color-coded to speaker and presented with time since hatch opening in hour:minute format.</li>
+                    </ul>
+                </div>
                 <div class='step' data-step='1'>
-                    <p>hr:mn<br>00:00</p>
+                    <p>00:00</p>
                     <ul>
                         <li class="neil">The hatch is coming open.</li>
                         <li class="comment">...</li>
@@ -86,10 +98,11 @@
                         <ul>
                             <li class="buzz">Okay. Now I want to back up and partially close the hatch.</li>
                             <li class="buzz">Making sure not to lock it on my way out.</li>
-                            <li class="neil">(Laughter) A pretty good thought.</li>             
+                            <li class="neil">(Laughter) A pretty good thought.</li>
                         </ul>
                         <img src="media/ladder.jpg" alt="none" class="img-n">
                         <ul>
+                            <li class="comment">The best photos are of Buzz because Neil was in charge of the Hasselblad camera.</li>
                             <li class="buzz">That’s our home for the next couple of hours and we want to take good care of it.</li>
                             <li class="comment">...</li> 
                             <li class="neil">A little more. About another inch.</li>
@@ -137,54 +150,41 @@
                         </ul>
                 </div>
                 <div class='step' data-step='7'>
-                        <p>01:01</p>
-                        <ul>
-                            <li class="capcom"> Columbia, this is Houston. Reading you loud and clear. Over.</li>
-                        </ul>
+                    <p>01:01</p>
+                    <ul>
+                        <li class="capcom"> Columbia, this is Houston. Reading you loud and clear. Over.</li>
+                    </ul>
 
-                        <img src="media/collins-yellow.png" alt="none" id="orbit" class="module"></img>
-                        
-                        <ul>
-                            <li class="mike"> Yes. Reading you loud and clear. How's it going?</li>
-                            <li class="capcom"> Roger. The EVA is progressing beautifully. I believe they are setting up the flag now.</li>
-                            <li class="mike"> Great.</li>
-                            <li class="capcom"> I guess you're about the only person around that doesn't have TV coverage of the scene.</li>
-                            <li class="mike"> That's all right. I don't mind a bit.</li>
-                            <li class="mike"> How is the quality of the TV?</li>
-                            <li class="capcom"> Oh, it's beautiful, Mike. It really is.</li>
-                            <li class="mike"> Oh, gee, that's great! Is the lighting half way decent?</li>
-                            <li class="capcom"> Yes, indeed. They've got the flag up now and you can see the stars and stripes on the lunar surface.</li>
-                            <li class="mike"> Beautiful. Just beautiful.</li>
-                        </ul>
+                    <img src="media/collins-yellow.png" alt="none" id="orbit" class="module"></img>
+                    
+                    <ul>
+                        <li class="mike"> Yes. Reading you loud and clear. How's it going?</li>
+                        <li class="capcom"> Roger. The EVA is progressing beautifully. I believe they are setting up the flag now.</li>
+                        <li class="mike"> Great.</li>
+                        <li class="capcom"> I guess you're about the only person around that doesn't have TV coverage of the scene.</li>
+                        <li class="mike"> That's all right. I don't mind a bit.</li>
+                        <li class="mike"> How is the quality of the TV?</li>
+                        <li class="capcom"> Oh, it's beautiful, Mike. It really is.</li>
+                        <li class="mike"> Oh, gee, that's great! Is the lighting half way decent?</li>
+                        <li class="capcom"> Yes, indeed. They've got the flag up now and you can see the stars and stripes on the lunar surface.</li>
+                        <li class="mike"> Beautiful. Just beautiful.</li>
+                    </ul>
 
-                        <img src="media/flag.png" alt="none" class="img-c">
+                    <img src="media/flag.png" alt="none" class="img-c">
                 </div>
 
 				<div class='step' data-step='8'>
                     <p>01:24</p>
-                        <ul>
-                            <li class="buzz">And right in this area, there are two craters. The one that's right in front of me now as I look off in about the eleven o'clock position from the spacecraft, about 30 to 35 feet ... There's several rocks and boulders 6 to 8 inches across.</li>
-                            <li class="comment">...</li>
-                            <li class="buzz">How's the bulk sample coming, Neil?</li>
-                            <li class="neil">Bulk sample is just being sealed.</li>
-                        </ul>
+                    <ul>
+                        <li class="buzz">And right in this area, there are two craters. The one that's right in front of me now as I look off in about the eleven o'clock position from the spacecraft, about 30 to 35 feet ... There's several rocks and boulders 6 to 8 inches across.</li>
+                        <li class="comment">...</li>
+                        <li class="buzz">How's the bulk sample coming, Neil?</li>
+                        <li class="neil">Bulk sample is just being sealed.</li>
+                    </ul>
                 </div>
                 
                 <div class='step' data-step='9'>
                     <p>END</p>
-                        <ul>
-                            <li class="capcom"> Columbia, this is Houston. Reading you loud and clear. Over.</li>
-                            <li class="mike"> Yes. Reading you loud and clear. How's it going?</li>
-                            <li class="capcom"> Roger. The EVA is progressing beautifully. I believe they are setting up the flag now.</li>
-                            <li class="mike"> Great.</li>
-                            <li class="capcom"> I guess you're about the only person around that doesn't have TV coverage of the scene.</li>
-                            <li class="mike"> That's all right. I don't mind a bit.</li>
-                            <li class="mike"> How is the quality of the TV?</li>
-                            <li class="capcom"> Oh, it's beautiful, Mike. It really is.</li>
-                            <li class="mike"> Oh, gee, that's great! Is the lighting half way decent?</li>
-                            <li class="capcom"> Yes, indeed. They've got the flag up now and you can see the stars and stripes on the lunar surface.</li>
-                            <li class="mike"> Beautiful. Just beautiful.</li>
-                        </ul>
                 </div>
                 
                 <div class='step' data-step='10'>
@@ -197,7 +197,11 @@
 			
 		</section>
 
-		<section id='outro'></section>
+		<section id='credits'>
+            <p class='outro'>
+                    Roll credits
+            </p>
+        </section>
 	</main>
 	
 	<!-- <div class='debug'></div> -->
@@ -213,7 +217,7 @@
 		var figure = scrolly.select('figure');
 		var article = scrolly.select('article');
         var step = article.selectAll('.step');
-        var figureHeight = window.innerWidth / 6.67;
+        var figureHeight = window.innerWidth / 4;
 
         // initialize the scrollama
 		var scroller = scrollama();
@@ -224,11 +228,7 @@
             //TK need to update this to length of text
 			//var stepH = Math.floor(window.innerWidth * 0.75);
 			//step.style('height', stepH + 'px');
-
-            //original:
-            //var figureHeight = window.innerHeight / 2
-			
-            //var figureMarginTop = (window.innerHeight - figureHeight) / 2  
+ 
             var figureMarginTop = (window.innerHeight - figureHeight);
 
 			figure
@@ -253,24 +253,49 @@
 			// update graphic based on step
             figure.select('p').text(response.index + 1);
 
+            //hide footer
+            var clock = document.getElementById("time");
+            
+            if (response.index >= 1 && response.index <10 ) {
+                clock.style.opacity = 1;
+                } else {
+                clock.style.opacity = 0;
+            }
+            
+
+            //update time based on step
+            var times = [
+                ["00:00","02:32"],
+                ["00:00","02:32"],
+                ["00:16","02:16"],
+                ["00:27","02:05"],
+                ["00:34","01:58"],
+                ["00:49","01:43"],
+                ["00:54","01:38"],
+                ["01:01","01:31"],
+                ["01:24","01:08"]
+                ];
+
+            document.getElementById("timel").textContent= times[response.index][0];
+
+            document.getElementById("timer").textContent= times[response.index][1];
+
             //update moon image
             document.getElementById('moon').src = ("media/Moon-" + response.index + ".jpg");
 
             //make command module fly
             var element = document.getElementById("orbit");
             
-            if (response.index == 6) {
+            if (response.index == 7) {
                 element.classList.add("slideLeft");
                 } else {
                 element.classList.remove("slideLeft");
             }
 
-            console.log(response.index);
-
             //header label
             var header = document.getElementById("labels");
             
-            if (response.index > 0 && response.index <10 ) {
+            if (response.index >= 1 && response.index <10 ) {
                 header.style.opacity = 1;
                 } else {
                 header.style.opacity = 0;
@@ -278,7 +303,7 @@
 
             var headercollins = document.getElementById("collins");
 
-            if (response.index == 6 ) {
+            if (response.index == 7 ) {
                 headercollins.style.opacity = 1;
                 } else {
                 headercollins.style.opacity = 0;
