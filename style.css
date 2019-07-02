@@ -26,7 +26,7 @@ img.img-n {
 
 img.img-c {
   border-radius: 10%;
-  width: 100%;
+  width: 50%;
   clear: both;
   margin-bottom: 2px;
   padding-left: 5px;
@@ -46,9 +46,9 @@ background: var(--buzz-color);
 }
 
 span.m {
-  font-weight: bold;
-  color: var(--mike-color);
-  }
+font-weight: bold;
+color: var(--mike-color);
+}
 
 .module {
   height: 75px;
@@ -124,6 +124,19 @@ font-size: 24px;
     padding: 1rem;
 }
 
+#credits {
+  max-width: 40rem;
+  margin: 1rem auto 0.5rem auto;
+  min-height: 20rem; /* update me */  
+}
+
+.outro {
+  text-align: justify;
+  /* top left-right bottom*/
+  margin: 1rem 2rem 0;
+  color: silver;
+}
+
 #intro {
     max-width: 40rem;
     /* top right bottom left*/
@@ -134,12 +147,25 @@ font-size: 24px;
     font-size: 2em;
     text-align: center;
   }
+
+  .intro__credit {
+    font-size: 1em;
+    text-align: center;
+    color: silver;
+  }
   
   .intro__dek {
     text-align: justify;
     /* top left-right bottom*/
-    margin: 1rem 2rem 1rem;
-    color: gainsboro;
+    margin: 1rem 2rem 0;
+    color: silver;
+  }
+
+  .intro__call {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
   }
 
 article {
@@ -153,12 +179,13 @@ article {
 .header {
   opacity: 0;
   position: fixed;
-  background-color: rgba(25,25,25,100);
+  background-color: black;
   top: 0;
   width: 100%;
   margin: 0 auto;
-  height: 4rem;
-  z-index: 10;
+  height: 2rem;
+  z-index: 15;
+  border-bottom: 2px solid rgba(25,25,25,100);
 }
 
 .header-p {
@@ -187,12 +214,39 @@ article {
   width: 100%;
   margin: 0 auto;
   height: 4rem;
-  z-index: 10;
+  z-index: 16;
 }
 
 .collins {
   color: var(--mike-color);
   font-weight: 500;
+}
+
+.footer {
+  opacity: 0;
+  position: fixed;
+  bottom: 0;
+  width: 96%;
+  /* top-bottom l-r */
+  margin: 0 2%;
+  z-index: 15;
+  color: white;
+  background-color: rgba(0,0,0,0);
+  font-weight: bold;
+  font-family: Courier, Helvetica, sans-serif;
+}
+
+.time-l {
+  float: left;
+}
+
+.time-r {
+  float: right;
+}
+
+.footer-p {
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
 
@@ -294,6 +348,7 @@ figure p {
 
   ul{
     display: block;
+    font-size: 1.25rem;
     list-style-type: none;
     margin-block-start: 0;
     margin-block-end: 1em;
@@ -365,13 +420,4 @@ figure p {
   
   .buzz + .buzz{
     border-top-right-radius: 5px;
-  }
-  
-  #intro {
-    min-height: 80vh;
-    margin-bottom: 10px;
-  }
-  
-  #outro {
-    height: 640px;
   }
