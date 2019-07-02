@@ -122,6 +122,7 @@ font-size: 24px;
     position: relative;
     background-color: black;
     padding: 1rem;
+    padding-top: 0;
 }
 
 #credits {
@@ -132,6 +133,14 @@ font-size: 24px;
 
 .outro {
   text-align: justify;
+  /* top left-right bottom*/
+  margin: 1rem 2rem 0;
+  color: white;
+}
+
+.outro-credits {
+  text-align: justify;
+  font-size: 1rem;
   /* top left-right bottom*/
   margin: 1rem 2rem 0;
   color: silver;
@@ -145,11 +154,12 @@ font-size: 24px;
   
   .intro__hed {
     font-size: 2em;
+    font-weight: 300;
     text-align: center;
   }
 
   .intro__credit {
-    font-size: 1em;
+    font-size: 0.75em;
     text-align: center;
     color: silver;
   }
@@ -158,14 +168,13 @@ font-size: 24px;
     text-align: justify;
     /* top left-right bottom*/
     margin: 1rem 2rem 0;
-    color: silver;
+    color: white;
   }
 
   .intro__call {
     text-align: center;
-    font-style: italic;
-    font-weight: bold;
-    color: white;
+    font-weight: 300;
+    color: grey;
   }
 
 article {
@@ -242,6 +251,11 @@ article {
 
 .time-r {
   float: right;
+}
+
+.time-explainer {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .footer-p {
@@ -379,6 +393,17 @@ figure p {
   .comment{
     margin-left: 10%;
     width: 80%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Courier, Helvetica, sans-serif;
+    background: rgba(0,0,0,0);
+    color: grey;
+  }
+
+  .break{
+    margin-left: 10%;
+    width: 80%;
+    height: 30rem;
     text-align: center;
     text-transform: uppercase;
     font-family: Courier, Helvetica, sans-serif;
