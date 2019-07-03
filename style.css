@@ -10,7 +10,7 @@ background-color: black;
 }
 
 :root {
---neil-color: maroon;
+--neil-color: firebrick;
 --buzz-color: royalblue;
 --mike-color: gold; 
 }
@@ -31,6 +31,16 @@ img.img-c {
   margin-bottom: 2px;
   padding-left: 5px;
   float: left;
+}
+
+.ladder {
+  background: url("media/ladder-art-300.jpg") no-repeat;
+  width: 300px;
+  height: 300px;
+  border-radius: 10%;
+}
+.ladder:hover {
+  background: url("media/ladder.jpg") no-repeat;
 }
 
 span.n {
