@@ -47,7 +47,9 @@
                 ["0:16","2:16"],
                 ["0:27","2:05"],
                 ["0:34","1:58"],
+                ["0:35","1:57"],
                 ["0:49","1:43"],
+                ["0:51","1:41"],
                 ["0:54","1:38"],
                 ["1:01","1:31"],
                 ["1:24","1:08"],
@@ -71,7 +73,7 @@
             //make command module fly
             var element = document.getElementById("orbit");
             
-            if (response.index == 7) {
+            if (response.index == 9) {
                 element.classList.add("slideLeft");
                 } else {
                 element.classList.remove("slideLeft");
@@ -80,7 +82,7 @@
             //hide and show header names
             var header = document.getElementById("labels");
             
-            if (response.index >= 1 && response.index <16 ) {
+            if (response.index >= 1 && response.index <18 ) {
                 header.style.opacity = 1;
                 } else {
                 header.style.opacity = 0;
@@ -97,7 +99,7 @@
             //hide and show footer times
             var clock = document.getElementById("time");
             
-            if (response.index >= 1 && response.index <16 ) {
+            if (response.index >= 1 && response.index <18 ) {
                 clock.style.opacity = 1;
                 } else {
                 clock.style.opacity = 0;
@@ -120,7 +122,7 @@
 			// 3. bind scrollama event handlers (this can be chained like below)
 			scroller.setup({
 				step: '#scrolly article .step',
-				offset: .5, //trigger line
+				offset: .25, //trigger line
  				debug: true,
 			})
 				.onStepEnter(handleStepEnter)
