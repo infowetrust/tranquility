@@ -90,7 +90,7 @@
 
             var headercollins = document.getElementById("collins");
 
-            if (response.index == 7 ) {
+            if (response.index == 9 ) {
                 headercollins.style.opacity = 1;
                 } else {
                 headercollins.style.opacity = 0;
