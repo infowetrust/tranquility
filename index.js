@@ -28,12 +28,12 @@
         
         //when you start or end a touch, turn the class hover_effect on or off.
         //https://stackoverflow.com/a/2891155
-        $(document).ready(function() {
+        /*($(document).ready(function() {
             $('.hover').on('touchstart touchend', function(e) {
                 e.preventDefault();
                 $(this).toggleClass('hover_effect');
             });
-        });
+        });*/
 
         // scrollama event handlers
 
