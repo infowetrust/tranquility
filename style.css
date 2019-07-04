@@ -362,10 +362,11 @@ figure p {
     border-bottom: 2px solid currentColor;
   }
 
-  .hover {
+  /*.hover {
     -webkit-user-select: none;
     -webkit-touch-callout: none;        
     }
+    */
   
   nav {
     display: -webkit-box;
