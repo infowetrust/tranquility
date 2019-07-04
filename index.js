@@ -28,12 +28,12 @@
         
         //when you start or end a touch, turn the class hover_effect on or off.
         //https://stackoverflow.com/a/2891155
-        /*($(document).ready(function() {
+        /*$(document).ready(function() {
             $('.hover').on('touchstart touchend', function(e) {
                 e.preventDefault();
                 $(this).toggleClass('hover_effect');
             });
-        });*/
+        }),*/
 
         // scrollama event handlers
 
@@ -62,6 +62,7 @@
                 ["0:54","1:38"],
                 ["1:01","1:31"],
                 ["1:24","1:08"],
+                ["1:45","0:47"],
                 ["1:50","0:42"],
                 ["1:55","0:37"],
                 ["2:04","0:28"],
@@ -91,7 +92,7 @@
             //hide and show header names
             var header = document.getElementById("labels");
             
-            if (response.index >= 1 && response.index <18 ) {
+            if (response.index >= 1 && response.index <19 ) {
                 header.style.opacity = 1;
                 } else {
                 header.style.opacity = 0;
@@ -108,7 +109,7 @@
             //hide and show footer times
             var clock = document.getElementById("time");
             
-            if (response.index >= 1 && response.index <18 ) {
+            if (response.index >= 1 && response.index <19 ) {
                 clock.style.opacity = 1;
                 } else {
                 clock.style.opacity = 0;
