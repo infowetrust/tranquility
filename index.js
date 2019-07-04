@@ -24,7 +24,14 @@
 
 			// 3. tell scrollama to update new element dimensions
 			scroller.resize();
-		}
+        }
+        
+        //touch interaction
+        var touch = document.getElementsByClassName('img-n')[0];
+        touch.onclick = function() {
+        // Trigger the `hover` event on the paragraph
+        touch.onhover.call(touch);
+        };
 
         // scrollama event handlers
 
