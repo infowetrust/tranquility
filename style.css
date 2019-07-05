@@ -22,6 +22,7 @@ img.img-n {
     margin-bottom: 2px;
     padding-left: 5px;
     float: left;
+    -webkit-touch-callout
 }
 
 img.img-b {
@@ -31,6 +32,7 @@ img.img-b {
   margin-bottom: 2px;
   padding-left: 5px;
   float: right;
+  -webkit-touch-callout: none;
 }
 
 img.img-c {
@@ -40,6 +42,7 @@ img.img-c {
   margin-bottom: 2px;
   padding-left: 5px;
   float: left;
+  -webkit-touch-callout: none;
 }
 
 span.n {
