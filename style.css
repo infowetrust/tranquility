@@ -403,23 +403,54 @@ figure p {
   }
 
   .comment{
+    text-transform: uppercase;
+    font-family: Courier, Helvetica, sans-serif;
+    background: rgba(0,0,0,0);
+  }
+
+  .ccenter{
     margin-left: 10%;
     width: 80%;
     text-align: center;
-    text-transform: uppercase;
-    font-family: Courier, Helvetica, sans-serif;
-    background: rgba(0,0,0,0);
     color: grey;
   }
 
-  .commentlong{
+  .clong{
     margin-left: 10%;
     width: 80%;
-    text-transform: uppercase;
     text-align: left;
-    font-family: Courier, Helvetica, sans-serif;
-    background: rgba(0,0,0,0);
     color: grey;
+  }
+
+  .cneil{
+    margin-left: 0%;
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--neil-color);
+    background: rgba(0,0,0,0);
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .cbuzz{
+    margin-left: 50%;
+    width: 50%;
+    text-align: right;
+    text-transform: uppercase;
+    color: var(--buzz-color);
+    background: rgba(0,0,0,0);
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .ccapcom{
+    margin-left: 10%;
+    width: 80%;
+    text-align: left;
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .break{
