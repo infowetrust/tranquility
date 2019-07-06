@@ -122,7 +122,6 @@ font-size: 24px;
   
   p,
   h1,
-  h2,
   h3,
   h4,
   a{
@@ -142,31 +141,6 @@ font-size: 24px;
   margin: 1rem auto 0.5rem auto;
   min-height: 20rem; /* update me */  
 }
-
-.outro {
-  text-align: justify;
-  /* top left-right bottom*/
-  margin: 1rem 2rem 0;
-  color: white;
-}
-
-.outro-author {
-  text-align: center;
-  font-size: 1.5rem;
-  /* top left-right bottom*/
-  margin: 1rem 2rem 0;
-  color: var(--mike-color);
-}
-
-.outro-credits {
-  text-align: justify;
-  font-size: 1.25rem;
-  /* top left-right bottom*/
-  margin: 1rem 2rem 0;
-  color: silver;
-}
-
-
 
 #intro {
     max-width: 40rem;
@@ -493,4 +467,71 @@ figure p {
   
   .buzz + .buzz{
     border-top-right-radius: 5px;
+  }
+
+  h2 {
+    color: white;
+    text-transform: uppercase;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .stinger p {
+    font-size: 1.25rem;
+    color: silver;
+    text-align: justify;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+
+  /* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+.outro {
+  text-align: justify;
+  color: white;
+}
+
+#payment {
+    width: 50%;
+    margin: 0 auto;
   }
