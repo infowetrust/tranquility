@@ -38,7 +38,7 @@
         // scrollama event handlers
 
         function handleStepEnter(response) {
-			console.log(response)
+			//console.log(response)
 			// response = { element, direction, index }
 
 			// add color to current step only
@@ -65,6 +65,7 @@
                 ["1:45","0:47"],
                 ["1:50","0:42"],
                 ["1:55","0:37"],
+                ["2:02","0:30"],
                 ["2:04","0:28"],
                 ["2:08","0:24"],
                 ["2:12","0:20"],
@@ -92,7 +93,7 @@
             //hide and show header names
             var header = document.getElementById("labels");
             
-            if (response.index >= 1 && response.index <19 ) {
+            if (response.index >= 1 && response.index <20 ) {
                 header.style.opacity = 1;
                 } else {
                 header.style.opacity = 0;
@@ -109,7 +110,7 @@
             //hide and show footer times
             var clock = document.getElementById("time");
             
-            if (response.index >= 1 && response.index <19 ) {
+            if (response.index >= 1 && response.index <20 ) {
                 clock.style.opacity = 1;
                 } else {
                 clock.style.opacity = 0;
