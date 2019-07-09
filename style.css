@@ -151,6 +151,7 @@ font-size: 24px;
     font-size: 2em;
     font-weight: 300;
     text-align: center;
+    
   }
 
   .intro__credit {
@@ -312,7 +313,7 @@ figure p {
 .step {
     /*top right bottom left*/
     background-color: rgba(0,0,0,0);
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     overflow: auto;
 }
 
@@ -407,8 +408,9 @@ figure p {
 
   .nixon{
     margin-left: 5%;
-    width: 90%;
-    font-style: italic;
+    width: 95%;
+    max-width: 38rem;
+    font-family: "Arial Narrow", Arial, sans-serif;
     text-align: justify;
     background: rgba(0,0,0,0);
     color: #fff;
