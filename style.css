@@ -22,7 +22,7 @@ img.img-n {
     margin-bottom: 2px;
     padding-left: 5px;
     float: left;
-    -webkit-touch-callout
+    -webkit-touch-callout: none;
 }
 
 img.img-b {
@@ -132,7 +132,6 @@ font-size: 24px;
   #scrolly {
     position: relative;
     background-color: black;
-    padding: 1rem;
     padding-top: 0;
 }
 
@@ -175,7 +174,7 @@ font-size: 24px;
 
 article {
     position: relative;
-    padding: 0;
+    padding: 1rem;
     max-width: 40rem;
     margin: 0 auto;
     z-index: 9;
@@ -187,14 +186,17 @@ article {
   background-color: black;
   top: 0;
   width: 100%;
+  /*top-bottom r-l*/
   margin: 0 auto;
   height: 2rem;
   z-index: 15;
   border-bottom: 2px solid rgba(25,25,25,100);
+  font-family: Courier, Helvetica, sans-serif;
 }
 
 .header-p {
   max-width: 40rem;
+  /*top-bottom r-l*/
   margin: 0 auto;
 }
 
@@ -214,6 +216,8 @@ article {
   opacity: 0;
   position: fixed;
   text-align: center;
+  font-weight: 500;
+  font-family: Courier, Helvetica, sans-serif;
   background-color: rgba(0,0,0,0);
   top: 0;
   width: 100%;
@@ -222,22 +226,27 @@ article {
   z-index: 16;
 }
 
+
 .collins {
   color: var(--mike-color);
-  font-weight: 500;
+  
+}
+
+.houston {
+  color: white;
 }
 
 .footer {
   opacity: 0;
   position: fixed;
   bottom: 0;
-  width: 96%;
-  /* top-bottom l-r */
-  margin: 0 2%;
+  /* top l-r bottom*/
+  margin: 0 1% 15px;
+  width: 98%;
   z-index: 15;
   color: white;
   background-color: rgba(0,0,0,0);
-  font-weight: bold;
+  font-weight: 500;
   font-family: Courier, Helvetica, sans-serif;
 }
 
@@ -251,11 +260,6 @@ article {
 
 .time-explainer {
   text-align: center;
-  margin: 0 auto;
-}
-
-.footer-p {
-  max-width: 40rem;
   margin: 0 auto;
 }
 
@@ -279,14 +283,13 @@ article {
 figure {
     position: -webkit-sticky;
     position: sticky;
-    left: 0;
-    width: 100%;
-    margin: 0;
     pointer-events: none;
+    margin:0;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     background-color: black;
+    
     z-index: 10;
 }
 
@@ -309,7 +312,7 @@ figure p {
 .step {
     /*top right bottom left*/
     background-color: rgba(0,0,0,0);
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     overflow: auto;
 }
 
@@ -402,6 +405,15 @@ figure p {
     color: #fff;
   }
 
+  .nixon{
+    margin-left: 5%;
+    width: 90%;
+    font-style: italic;
+    text-align: justify;
+    background: rgba(0,0,0,0);
+    color: #fff;
+  }
+
   .comment{
     text-transform: uppercase;
     font-family: Courier, Helvetica, sans-serif;
@@ -427,6 +439,7 @@ figure p {
     width: 100%;
     text-align: left;
     text-transform: uppercase;
+    font-weight: 700;
     color: var(--neil-color);
     background: rgba(0,0,0,0);
     margin-bottom: 0;
@@ -438,6 +451,7 @@ figure p {
     width: 50%;
     text-align: right;
     text-transform: uppercase;
+    font-weight: 700;
     color: var(--buzz-color);
     background: rgba(0,0,0,0);
     margin-bottom: 0;

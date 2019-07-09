@@ -2,30 +2,43 @@
 		var main = d3.select('main')
 		var scrolly = main.select('#scrolly');
 		var figure = scrolly.select('figure');
-		var article = scrolly.select('article');
+        var article = scrolly.select('article');
         var step = article.selectAll('.step');
-        var figureHeight = window.innerWidth / 4;
 
         // initialize the scrollama
-		var scroller = scrollama();
+        var scroller = scrollama();
 
 		// generic window resize listener event
 		function handleResize() {
-            // 1. update height of step elements
-            //TK need to update this to length of text
-			//var stepH = Math.floor(window.innerWidth * 0.75);
-			//step.style('height', stepH + 'px');
- 
+            // 1. update height and width of step elements
+            var ratio = 5/8; //breakeven point for 40% figur max height
+            var figureHeight = window.innerHeight / 4; //pic w/h = 4
+            var figureWidth = window.innerWidth;
+            
+            var windowRatio = window.innerHeight / window.innerWidth;
+            if (windowRatio <= ratio) {
+                figureHeight = window.innerHeight / 2.5;
+                figureWidth = window.innerHeight * 1.6;
+                } else {
+                    figureHeight = window.innerWidth / 4;
+                    figureWidth = window.innerWidth;
+                }
+            
             var figureMarginTop = (window.innerHeight - figureHeight);
+            var marginDifference = (window.innerWidth - figureWidth)
+            var figureMarginLeft = marginDifference / 2;
 
 			figure
-				.style('height', figureHeight + 'px')
-				.style('top', figureMarginTop + 'px');
+                .style('height', figureHeight + 'px')
+                .style('width', figureWidth + 'px')
+                .style('top', figureMarginTop + 'px')
+                .style('left', figureMarginLeft + 'px');
 
 			// 3. tell scrollama to update new element dimensions
 			scroller.resize();
         }
-        
+
+
         //when you start or end a touch, turn the class hover_effect on or off.
         //https://stackoverflow.com/a/2891155
         $(document).ready(function() {
@@ -38,10 +51,7 @@
         // scrollama event handlers
 
         function handleStepEnter(response) {
-			//console.log(response)
-			// response = { element, direction, index }
 
-			// add color to current step only
 			step.classed('is-active', function (d, i) {
 				return i === response.index;
 			})
@@ -51,27 +61,29 @@
             
             //update time based on step
             var times = [
-                ["0:00","2:32"],
-                ["0:00","2:32"],
-                ["0:16","2:16"],
-                ["0:27","2:05"],
-                ["0:34","1:58"],
-                ["0:35","1:57"],
-                ["0:49","1:43"],
-                ["0:51","1:41"],
-                ["0:54","1:38"],
-                ["1:01","1:31"],
-                ["1:24","1:08"],
-                ["1:45","0:47"],
-                ["1:50","0:42"],
-                ["1:55","0:37"],
-                ["2:02","0:30"],
-                ["2:04","0:28"],
-                ["2:08","0:24"],
-                ["2:12","0:20"],
-                ["2:30","0:02"],
-                ["2:32","0:00"],
-                ["2:32","0:00"]
+                ["00:00","2:32"],
+                ["00:00","02:32"],
+                ["00:16","02:16"],
+                ["00:27","02:05"],
+                ["00:34","01:58"],
+                ["00:35","01:57"],
+                ["00:49","01:43"],
+                ["00:51","01:41"],
+                ["00:54","01:38"],
+                ["01:01","01:31"],
+                ["01:06","01:26"],
+                ["01:09","01:23"],
+                ["01:24","01:08"],
+                ["01:45","00:47"],
+                ["01:50","00:42"],
+                ["01:55","00:37"],
+                ["02:02","00:30"],
+                ["02:04","00:28"],
+                ["02:08","00:24"],
+                ["02:12","00:20"],
+                ["02:30","00:02"],
+                ["02:32","00:00"],
+                ["02:32","00:00"]
                 ];
 
             document.getElementById("timel").textContent= times[response.index][0];
@@ -93,12 +105,21 @@
             //hide and show header names
             var header = document.getElementById("labels");
             
-            if (response.index >= 1 && response.index <20 ) {
+            if (response.index >= 1 && response.index <22 ) {
                 header.style.opacity = 1;
                 } else {
                 header.style.opacity = 0;
             }
 
+            //CAPCOM header
+            var headerhouston = document.getElementById("houston");
+
+            if (response.index > 6 && response.index < 9 || response.index > 9 && response.index < 21  ) {
+                headerhouston.style.opacity = 1;
+                } else {
+                headerhouston.style.opacity = 0;
+            }
+            //MIKE header
             var headercollins = document.getElementById("collins");
 
             if (response.index == 9 ) {
@@ -110,7 +131,7 @@
             //hide and show footer times
             var clock = document.getElementById("time");
             
-            if (response.index >= 1 && response.index <20 ) {
+            if (response.index >= 1 && response.index <22 ) {
                 clock.style.opacity = 1;
                 } else {
                 clock.style.opacity = 0;
