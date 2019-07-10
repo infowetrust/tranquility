@@ -146,7 +146,7 @@ font-size: 24px;
 #intro {
     max-width: 40rem;
     /* top right bottom left*/
-    margin: 1rem auto 0.5rem auto;
+    margin: 0.25rem auto 0.5rem auto;
   }
   
   .intro__hed {
@@ -479,7 +479,7 @@ figure p {
   .break{
     margin-left: 10%;
     width: 80%;
-    height: 20rem;
+    height: 30rem;
     text-align: center;
     text-transform: uppercase;
     font-family: Courier, Helvetica, sans-serif;
