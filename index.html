@@ -4,131 +4,557 @@
  / // || // _/ / o | | V V // _/    / / /  ,'/ U /_\ `.  / /  
 /_//_/|_//_/   |_,'  |_n_,'/___/   /_/ /_/`_\\_,'/___,' /_/   
                                                               
-Copyright 2017-2019, RJ Andrews, All rights reserved. 
--->
+Copyright 2019, RJ Andrews, All rights reserved.-->
 
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	    <link rel="shortcut icon" type="image/png" href="https://infowetrust.com/wp-content/uploads/2018/12/primaryCubeFavicon144.png"/>
-<meta name="pinterest" content="nopin"/>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png"
+    href="https://infowetrust.com/wp-content/uploads/2018/12/primaryCubeFavicon144.png"/>
+    <title>Neil & Buzz</title>
+    	
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://infowetrust.com/wp-content/uploads/2019/10/twittercard2.png">
+    <meta property="twitter:image:width" content="876">
+    <meta property="twitter:image:height" content="438">
+    <meta name="twitter:image:alt" content="Illustration of Neil & Buzz on the moon.">
+    <meta name="twitter:site" content="@infowetrust">
+    <meta name="twitter:creator" content="@infowetrust">
+    <meta name="twitter:title" content="Neil & Buzz Go For a Walk">
+    <meta name="twitter:description" content="A data story about what happened on their 1969 Moonwalk, told with a new map and highlights from the original transmission log.">
+    
+    <meta property="og:title" content="Neil & Buzz Go For a Walk">
+    <meta property="og:description" content="A data story about what happened on their 1969 Moonwalk, told with a new map and highlights from the original transmission log.">
+    <meta property="og:image" content="https://infowetrust.com/wp-content/uploads/2019/10/twittercard2.png">
+    <meta property="og:image:width" content="876">
+    <meta property="og:image:height" content="438">
+    <meta property="og:url" content="https://infowetrust.com/tranquility/">
+    <meta property="og:site_name" content="Info We Trust">
+    <meta property="og:type" content="website">
 
 
-	
-	  <meta name="twitter:card" content="summary_large_image">
-	  <meta name="twitter:image:alt" content="Map of DataViz Firsts:">
-	  <meta name="twitter:site" content="@infowetrust">
-	  <meta name="twitter:creator" content="@infowetrust">
-	
-	  <meta property="og:title" content="Map of DataViz Firsts:">
-	  <meta property="og:description" content="An interactive timeline of the most iconic infographics.">
-	  <meta property="og:image" content="http://infowetrust.comimages/twittercard.png">
-	  <meta property="og:url" content="http://infowetrust.com/scroll/">
-	  <meta property="og:site_name" content="Info We Trust">
+    <meta name="pinterest" content="nopin"/>
 
-	<title>History of Infographics</title>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<script src="mustache.js"></script>
-
-	<script src="https://www.w3schools.com/lib/w3.js"></script>
-
-	<link rel="stylesheet" href="style.css">
-
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--<meta name="description" content="Scrollama: Sticky Overlay Example">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='style.css'>
+    <!--ADOBE FONTS-->
+    <link rel="stylesheet" href="https://use.typekit.net/bai2ehs.css">
 </head>
 
-<body onload="resizeContainer()" onresize="resizeContainer()">
-	<!--Overlay
-	Unique title side panel that appears onload -->
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
 
-<div id="master" class="container">
+	<main>
+		<section id='intro'>
+            <h1 class='intro__hed'>Neil and Buzz<br>Go for a Walk</h1>
+            <p class='intro__credit'><b>By RJ&nbsp;ANDREWS.</b> JULY 2019</p>
+			<p class='intro__dek'>
+                    <br>After four days of travel, a daring landing, and hours of preparation, the hatch of Apollo&nbsp;11’s Lunar Module <i>Eagle</i> opened on the Moon. For the next two hours astronauts <span class="n">&nbsp;NEIL&nbsp;ARMSTRONG&nbsp;</span> and <span class="b">&nbsp;BUZZ&nbsp;ALDRIN&nbsp;</span> explored an area the size of a baseball diamond.<br>
+                    <br>
+                    This is the story about what happened on that 1969 Moonwalk, told with highlights from the original transmission log. Scroll to see the adventure.<br>
+                    <br>
+                    <br>
 
-	<div id="titleFog" class="fog"></div>
-	<div id="titleSide" class="titleL" style="text-align: center;" w3-include-html="title.html"></div>
+            </p>
+            <p class="intro__call">SCROLL<br>▼</p>
+        </section>
 
-	<div class="atlas">
-		<!--background base image-->
-		<img src="images/base100.jpg" alt=""/>
-		<!--background graphics-->
-		<span id='graphics' class='static'></span>
-		<!--background text-->
-		<span id='scrollText' class='static'></span>
-		<!--Corner link opens Title side panel-->		
-		<a href="https://medium.com/info-we-trust/interacting-with-the-history-of-dataviz-2d1867f2bf9a" target="_blank"><span id='corner' class='cartoon'></span></a>
-		<!--Keystone figures-->
-		<span id='keystoneSeal' class='keystone'></span>
-		<span id='keystoneNightingale' class='keystone'></span>
-		<span id='keystonePlayfair' class='keystone'></span>
-		<span id='keystoneSnow' class='keystone'></span>
-		<span id='keystoneDubois' class='keystone'></span>
+        <div class="header" id="labels">    
+            <div class="header-p">
+                <p>
+                    <span class="armstrong">&nbsp;NEIL</span>
+                    <span class="aldrin">BUZZ&nbsp;</span>
+                </p><br>
+                <p>
+                    <!--<span class="armstrong">ARMSTRONG</span>
+                    <span class="aldrin">ALDRIN</span>-->
+                </p>
+            </div>
+        </div>
 
-		<!--Cartoons on scroll-->
-		<div id="spotlight" class="fogSpotlight"></div>
-		<div id="cartoons" w3-include-html="cartoons.html"></div>
-		
-	</div>
+        <div class="header-c" id="collins">
+                <p>
+                    <span class="collins">COLLINS</span><br>
+                </p>
+        </div>
+
+        <div class="header-c" id="houston">
+                <p>
+                    <span class="houston">CAPCOM</span><br>
+                </p>
+        </div>
+
+		<section id='scrolly'>
+                <figure>
+                    <img src="media/Moon-0.jpg" id="moon" width="100%">
+                    <div class="footer" id="time">    
+                            <span class="time-l" id="timel">00:00</span>
+                            <span class="time-r" id="timer">02:32</span>
+                    </div>
+                </figure>
+    
+                <!--Transcript goes here-->
+                <article>
+                    <div class='step' data-step='0'>
+                        <p>hh:mm</p>
+                        <ul>
+                            <li class="comment ccenter">Mission highlights presented with hour:minute since hatch opening.</li>
+                        </ul>
+                    </div>
+                    <div class='step' data-step='1'>
+                        <p>00:00</p>
+                        <ul>
+                            <li class="comment cneil">Neil Armstrong</li>
+                            <li class="neil">The hatch is coming open.</li>
+                            <li class="comment ccenter">...</li>
+                            <li class="comment cbuzz">Buzz Aldrin</li>
+                            <li class="buzz">About ready to go down and get some Moon rock?</li>
+                        </ul>
+                        
+                    </div>
+                    <div class='step' data-step='2'>
+                        <p>00:16</p>
+                        <ul>
+                            <li class="comment ccenter">16 minutes since hatch opening.</li>
+                            <li class="comment cneil">Neil Armstrong</li>
+                            <li class="neil">I’m at the foot of the ladder. The LM footpads are only depressed in the surface about 1 or 2 inches, although the surface appears to be very, very fine grained, as you get close to it. It’s almost like a powder. Down there, it’s very fine.</li>
+                            <li class="comment ccenter">LM ("LEM") stands for Lunar Module.</li>
+                            <li class="neil">I’m going to step off the LM now.</li>
+                            <li class="neil">THAT'S ONE SMALL STEP FOR (A) MAN, ONE GIANT LEAP FOR MANKIND</li>
+                            <img src="media/step.jpg" alt="none" class="img-n"
+                                onmouseover="this.src='media/step.gif'"
+                                onmouseout="this.src='media/step.jpg'"
+                                ontouchstart="this.src='media/step.gif'"
+                                ontouchend="this.src='media/step.jpg'">
+                            <li class="comment ccenter" >Hover or touch illustrations</li>
+                            <li class="neil">And the - the surface is fine and powdery. I can - I can pick it up loosely with my toe. It does adhere in fine layers like powdered charcoal to the sole and sides of my boots. I only go in a small fraction of an inch, maybe an eighth of an inch, but I can see the footprints of my boots and the treads in the fine, sandy particles.</li>
+                            <li class="comment clong">Neil puts a "contingency sample" in his pocket in case an emergency prevents further collection.</li>
+                        </ul>
+                        
+                    </div>
+                    <div class='step' data-step='3'>
+                        <p>00:27</p>
+                        <ul>
+                            <li class="comment cbuzz">Buzz Aldrin</li>
+                            <li class="buzz">That looks beautiful from here, Neil.</li>
+                            <li class="comment cneil">Neil Armstrong</li>
+                            <li class="neil">It has a stark beauty all its own. It’s like much of the high desert of the United States. It’s different but it’s very pretty out here. </li>
+                            <!--Be advised that a lot of the rock samples out here, the hard rock samples, have what appear to be vesicles in the surface. Also, I am looking at one now that appears to have some sort of phenocryst.-->
+                        </ul>
+                    </div>
+                    <!--<div class="ladder"></div>-->
+                    <div class='step' data-step='4'>
+                            <p>00:34</p>
+                            <ul>
+                                <li class="comment ccenter">Buzz joins Neil.</li>
+                                <li class="buzz">Okay. Now I want to back up and partially close the hatch.</li>
+                                <li class="buzz">Making sure not to lock it on my way out.</li>
+                                <li class="neil">(Laughter) A pretty good thought.</li>
+                                <li class="buzz">That’s our home for the next couple of hours and we want to take good care of it.</li>
+                            </ul>
+                        </div>
+                                
+                    <div class='step' data-step='5'>
+                            <img src="media/ladder.jpg" alt="none" class="img-n"
+                                onmouseover="this.src='media/ladder.gif'"
+                                onmouseout="this.src='media/ladder.jpg'"
+                                ontouchstart="this.src='media/ladder.gif'"
+                                ontouchend="this.src='media/ladder.jpg'">
+                            <ul>
+                                <li class="comment clong">Neil operated the Hasselblad camera for most of the Moonwalk, so most photos are of Buzz.</li>
+                                <li class="neil">A little more. About another inch.</li>
+                                <li class="neil">THERE YOU GOT IT.</li>
+                                <li class="neil">That’s a good step. About a 3-footer.</li>
+                                <li class="buzz">Beautiful view!</li>
+                                <li class="neil">Isn’t that something! Magnificent sight out here.</li>
+                                <li class="buzz">Magnificent desolation.</li>
+                                <li class="comment clong">Each circle below is a radio transmission, colored by speaker. Transmissions not shown remain grey. </li>
+                            </ul>
+                    </div>
+    
+                    <div class='step' data-step='6'>
+                            <p>00:49</p>
+                            <ul>
+                                <li class="comment ccenter">Buzz feeds TV cord to Neil.</li>
+                                <li class="buzz">Now keep going. We've got a lot more.</li>
+                                <li class="neil">Okay.</li>
+                                <li class="buzz">Getting a little harder to pull out, here.</li>
+                                <li class="neil">How far would you say I am, Buzz?</li>
+                                <li class="buzz">Forty, fifty feet. Why don't you turn around and let them get a view from there and see what the field of view looks like?</li>
+                                <li class="comment clong">The white TV cord was soon covered with moondust. Hard to see, it entangled Neil several times.</li>
+                            </ul>
+                        </div>
+                                
+                    <div class='step' data-step='7'>
+                            <p>00:51</p>
+                            <ul>
+                            <li class="comment clong">The capsule communicator (CAPCOM, in white text) was an astronaut at Mission Control in Houston.</li>
+                            <li class="capcom">CAPCOM: Neil, this is Houston. The field of view is okay. We'd like you to aim it a little bit more to the right. Over.</li>
+                            <li class="neil">Okay.</li>
+                            <li class="buzz">Okay. That's all the cable we have. *** not going out. I'll start working on the solar wind - -</li>
+                            <li class="capcom">CAPCOM: A little bit too much to the right. Can you bring it back left about 4 or 5 Degrees?</li>
+                            <li class="capcom">Okay. That looks good Neil.</li>
+                            <li class="neil">Okay, now. Do you think I ought to be farther away, or closer?</li>
+                            <li class="buzz">Can't get too much further away.</li>
+                            <li class="neil">Let's try it like that for a while. I'll get a couple of panoramas with it, here.</li>
+                            </ul>
+                    </div>
+                    <div class='step' data-step='8'>
+                            <ul>
+                                <li class="comment ccenter">...</li>
+                                <li class="capcom">CAPCOM: Okay. That looks good there, Neil.</li>
+                                <li class="neil">Okay.</li>
+                            </ul>
+                            <img src="media/solarwind.jpg" alt="none" class="img-n"
+                                onmouseover="this.src='media/solarwind.gif'"
+                                onmouseout="this.src='media/solarwind.jpg'"
+                                ontouchstart="this.src='media/solarwind.gif'"
+                                ontouchend="this.src='media/solarwind.jpg'">
+                            <ul>
+                                <li class="buzz">Okay. You can make a Mark, Houston. *** deployed.</li>
+                                <li class="capcom">Roger. Solar wind.</li>
+                                <li class="comment clong">The Solar Wind Experiment was an alumninum sheet that absorbed solar-wind particles during the Moonwalk.</li>
+                            </ul>
+                    </div>
+                    <div class='step' data-step='9'>
+                        <p>01:01</p>
+                        <ul>
+                            <li class="capcom">CAPCOM: Columbia, this is Houston. Reading you loud and clear. Over.</li>
+                        </ul>
+    
+                        <img src="media/collins-yellow.png" alt="none" id="orbit" class="module"></img>
+                        
+                        <ul>
+                            <li class="comment ccenter">Crewmate Michael&nbsp;Collins orbits above in the Command Service Module.</li>
+                            <li class="mike">COLLINS: Yes. Reading you loud and clear. How's it going?</li>
+                            <li class="capcom">Roger. The EVA is progressing beautifully. I believe they are setting up the flag now.</li>
+                            <li class="comment ccenter">EVA stands for<br>extra vehicular activity.</li>
+                            <li class="mike"> Great.</li>
+                            <li class="capcom">I guess you're about the only person around that doesn't have TV coverage of the scene.</li>
+                            <li class="mike"> That's all right. I don't mind a bit.</li>
+                            <li class="mike"> How is the quality of the TV?</li>
+                            <li class="capcom">Oh, it's beautiful, Mike. It really is.</li>
+                            <li class="mike"> Oh, gee, that's great! Is the lighting half way decent?</li>
+                            <li class="capcom">Yes, indeed. They've got the flag up now and you can see the stars and stripes on the lunar surface.</li>
+                            <li class="mike"> Beautiful. Just beautiful.</li>
+                        </ul>
+    
+                        <img src="media/flag.jpg" alt="none" class="img-n"
+                        onmouseover="this.src='media/flag.gif'"
+                        onmouseout="this.src='media/flag.jpg'"
+                        ontouchstart="this.src='media/flag.gif'"
+                        ontouchend="this.src='media/flag.jpg'">
+                    </div>
+    
+                    <div class='step' data-step='10'>
+                            <ul>
+                                <li class="comment ccenter">...</li>
+                                <li class="buzz">I'd like to evaluate the various paces that a person can *** traveling on the lunar surface. I believe I'm out of your field of view. Is that right, now, Houston?</li>
+                                <li class="capcom">That's affirmative, Buzz.</li>
+                                <li class="capcom">You are in our field of view now.</li>
+                                <li class="buzz">Okay. You do have to be rather careful to keep track of where your center of mass is. Sometimes, it takes about two or three paces to make sure you've got your feet underneath you.</li>
+                                <li class="buzz">About two to three or maybe four easy paces can bring you to a nearly smooth stop. *** change directions, like a football player, you just have to to *** foot out to the side and cut a little bit.</li>
+                            </ul>
+                            <img src="media/bounce.jpg" alt="none" class="img-n"
+                            onmouseover="this.src='media/bounce.gif'"
+                            onmouseout="this.src='media/bounce.jpg'"
+                            ontouchstart="this.src='media/bounce.gif'"
+                            ontouchend="this.src='media/bounce.jpg'">
+                            <ul>
+                                <li class="buzz">So called kangeroo hop does work, but it seems that your forward mobility is not quite as good as - it is in the conventional - more conventional one foot after another.</li>
+                                <li class="buzz">It's hard saying what a sane pace might be. I think it's the one that I'm using now - would get rather tiring after several hundred *** but this may be a function of this suit, as well as lack of gravity forces.</li>
+                                <li class="capcom">Tranquility Base, this is Houston. Could we get both of you on the camera for a minute, please?</li>
+                                <li class="neil">Say again, Houston.</li>
+                                <li class="capcom">Roger. We'd like to get both of you in the field of view of the camera for a minute.</li>
+                            </ul>
+                        </div>
+    
+                        <div class='step' data-step='11'>
+                            <ul>
+                                    <li class="capcom">Neil and Buzz, the President of the United States is in his office now and would like to say a few words to you. Over.</li>
+                                    <li class="neil">That would be an honor.</li>
+                                    <li class="capcom">Go ahead, Mr. President. This is Houston. Out.</li>
+                                    <li class="nixon">PRESIDENT NIXON: Neil and Buzz, I am talking to you by telephone from the Oval Room at the White House, and this certainly has to be the most historic telephone call ever made from the White House. I just can't tell you how proud we all are of what you have done. For every American, this has to be the proudest day of our lives. And for people all over the world, I am sure they, too, join with Americans in recognizing what an immense feat this is. Because of what you have done, the heavens have become a part of man's world. And as you talk to us from the Sea of Tranquility, it inspires us to redouble our efforts to bring peace and tranquility to Earth. For one priceless moment in the whole history of man, all the people on this Earth are truly one; one in their pride in what you have done, and one in our prayers that you will return safely to Earth.</li>
+                                    <li class="neil">Thank you, Mr. President. It's a great honor and privilege for us to be here representing not only the United States but men of peace of all nations, and with interest and a curiosity and a vision for the future. It's an honor for us to be able to participate here today.</li>
+                                    <li class="nixon">PRESIDENT NIXON: And thank you very much and I look forward - all of us look forward to seeing you on the Hornet on Thursday.</li>
+                                    <li class="buzz">I look forward to that very much, sir.</li>    
+                            </ul>
+                        </div>
+    
+                    <div class='step' data-step='12'>
+                        <p>01:24</p>
+                        <ul>
+                            <li class="comment clong">Each column of the bubble timeline below represents two minutes of the Moonwalk.</li>
+                            <li class="buzz">And right in this area, there are two craters. The one that's right in front of me now as I look off in about the eleven o'clock position from the spacecraft, about 30 to 35 feet ... There's several rocks and boulders 6 to 8 inches across.</li>
+                            <li class="comment ccenter">...</li>
+                            <li class="buzz">How's the bulk sample coming, Neil?</li>
+                            <li class="neil">Bulk sample is just being sealed.</li>
+                        </ul>
+                    </div>
+    
+                    <div class='step' data-step='13'>
+                        <p>01:45</p>
+                        <ul>
+                            <li class="comment ccenter">SEQ stands for Scientific Equipment</li>
+                            <li class="buzz">Can you see us underneath the LM over at the SEQ bay, Houston?</li>
+                            <li class="capcom">Yes indeed, Buzz. We can see your feet sticking out underneath the structure of the LM descent stage.</li>
+                            <li class="comment ccenter">...</li>
+                            <li class="buzz">You want to pick an area, Neil?</li>
+                        </ul>
+                        <img src="media/mesa.jpg" alt="none" class="img-n"
+                        onmouseover="this.src='media/mesa-photo.jpg'"
+                        onmouseout="this.src='media/mesa.jpg'"
+                        ontouchstart="this.src='media/mesa-photo.jpg'"
+                        ontouchend="this.src='media/mesa.jpg'">
+                    </div>
+                    
+                    <div class='step' data-step='14'>
+                        <p>01:50</p>
+                        <ul>
+                            <li class="comment ccenter">Buzz carries experiments as they look for a place to setup.</li>
+                            <li class="buzz">Have you got us a good area picked out?</li>
+                            <li class="neil">Yes. I think right out on that rise out there is probably as good as any.</li>
+                            <li class="neil">I'll probably stay on the high ground there and - -</li>
+                            <li class="buzz">Watch it; the edge of that crater is - drops - -</li>
+                            <li class="neil">Yes. It drops off there, doesn't it?</li>
+                            <img src="media/carry.jpg" alt="none" class="img-n"
+                            onmouseover="this.src='media/carry-photo.jpg'"
+                            onmouseout="this.src='media/carry.jpg'"
+                            ontouchstart="this.src='media/carry-photo.jpg'"
+                            ontouchend="this.src='media/carry.jpg'">
+                        </ul>
+                    </div>
+                    
+                    <div class='step' data-step='15'>
+                        <p>01:55</p>
+                        <ul>
+                            <li class="comment clong">The Passive Seismic Experiment (PSE) collected internal structure data and detected lunar "moonquakes".</li>
+                            <li class="buzz">Roger. I say I'm not having too much success in leveling the PSE experiment.</li>
+                            <li class="neil">The laser reflector is installed and the bubble is leveled and the alignment appears to be good.</li>
+                            <li class="capcom">Neil, this is Houston. Roger. Out.</li>
+                            <li class="comment ccenter"> "B B" stands for Ball Bearing.</li>
+                            <li class="buzz">Hey, you want to take a look at this B B and see what you make out of it?</li>
+                            <li class="neil">I find it pretty hard to get perfectly level, too.</li>
+                            <li class="buzz">That B B likes the outside. It won't go on the inside.</li>
+                            <li class="neil">That little cup is convex now, instead of concave.</li>
+                            <li class="buzz">I think you're right.</li>
+                            <li class="neil">Believe it is.</li>
+                            <img src="media/experiment.jpg" alt="none" class="img-n" onmouseover="this.src='media/experiment-photo.jpg'" 
+                            onmouseout="this.src='media/experiment.jpg'"
+                            ontouchstart="this.src='media/experiment-photo.jpg'"
+                            ontouchend="this.src='media/experiment.jpg'">
+                            <li class="buzz">Houston, I don't think there's any hope for using this leveling device to come up with an accurate level. It looks to me as though the cup here that the B B is in is now convex instead of concave. Over.</li>
+                            <li class="capcom">Roger, 11. Press on. If you think it looks level by eyeball, go ahead.</li>
+                            <li class="buzz">Okay.</li>
+                        </ul>
+                    </div>
+                    <div class='step' data-step='16'>
+                        <p>02:02</p>
+                        <ul>
+                            <li class="neil">Oh, shoot. Would you believe the ball is right in the middle now?</li>
+                            <li class="buzz">Wonderful. Take a picture before it moves.</li>
+                            <li class="comment ccenter">Neil took the photo.<br>It turned out blurry.</li>
+                        </ul>
+                    </div>
+    
+                    <div class='step' data-step='17'>
+                        <p>02:04</p>
+                        <ul>
+                            <li class="comment ccenter">Neil runs 200 feet from the LM to look at Little West Crater.</li>
+                            <li class="capcom">Buzz, this is Houston. You've got about 10 minutes left now prior to commencing your EVA termination activities. Over.</li>
+                            <li class="buzz">Roger. I understand.</li>
+                        </ul>
+                    </div>
+    
+                    <div class='step' data-step='18'>
+                        <p>02:08</p>
+                        <ul>
+                            <li class="comment ccenter">Neil rejoins as Buzz collects two shallow core samples.</li>
+                            <li class="buzz">I hope you're watching how hard I have to hit this into the ground, to the tune of about 5 inches, Houston.</li>    
+                            <li class="capcom">Roger.</li>
+                            <li class="buzz">It almost looks wet.</li>
+                            <img src="media/core.jpg" alt="none" class="img-n"
+                            onmouseover="this.src='media/core.gif'"
+                            onmouseout="this.src='media/core.jpg'"
+                            ontouchstart="this.src='media/core.gif'"
+                            ontouchend="this.src='media/core.jpg'">
+                            <li class="neil">Got a sample.</li>
+                        </ul>
+                    </div>
+    
+                    <div class='step' data-step='19'>
+                            <p>02:12</p>
+                            <ul>
+                                <li class="comment ccenter">Capcom instructions quicken as the end of Moonwalk nears.</li>
+                                <li class="capcom">Neil, this is Houston. After you've got the core tubes and the solar wind, anything else that you can throw into the box would be acceptable.</li>
+                                <li class="neil">Righto.</li>
+                                <li class="comment ccenter"> The Solar Wind foil was returned to Earth for laboratory analysis.</li>
+                                <li class="comment ccenter">...</li>
+                                <li class="capcom">Buzz, this is Houston. It's about time for you to start your EVA closeout activities.</li>
+                                <li class="buzz">Roger. That's in progress.</li>
+                                <li class="comment ccenter">...</li>
+                                <li class="buzz">Anything more before I head on up, Bruce?</li>
+                                <li class="capcom">Negative. Head on up the ladder, Buzz.</li>
+                            </ul>
+                        </div>
+    
+                        <div class='step' data-step='20'>
+                            <p>02:30</p>
+                            <ul>
+                                <li class="capcom">Neil, this is Houston. Did you get the Hasselblad magazine?</li>
+                                <li class="neil">Yes, I did. And we got about, I'd say, 20 pounds of carefully selected, if not documented, samples.</li>
+                                <li class="capcom">Houston. Roger. Well done. Out.</li>
+                            </ul>
+                        </div>
+    
+                        <div class='step' data-step='21'>
+                            <p>2:32</p>
+                            <ul>
+                                <li class="comment clong">Neil does a deep knee bend and takes advantage of 1/6 gravity as he springs up to the ladder's 3rd step.</li>
+                                <li class="comment clong">Then Buzz helps Neil into LM.</li>
+                                <li class="buzz">Just keep your head down close. Now start arching your back. That's good. Plenty of room. Now, all right, arch your back a little, your head up against *** Roll right just a little bit. Head down. ... in good shape.</li>
+                                <li class="neil">Thank you. Am I bumping now?</li>
+                                <li class="buzz">No, you're clear. You're rubbing up against me a little bit.</li>
+                                <li class="neil">Okay?</li>
+                                <li class="buzz">All right. That's right. A bit to the left. Okay. Now move your foot, and I'll get the hatch.</li>
+                                <li class="neil">Okay.</li>
+                                <li class="buzz">Okay. The hatch is closed and latched, and verified secure.</li>
+                            </ul>
+                        </div>
+    
+                        <div class='step' data-step='22'>
+                            <ul>
+                                <li class="comment ccenter"> End of Transcript Excerpt.<li></li>
+                                    
+                                <li class="comment ccenter">Only the most exciting Moonwalk action was shown in this story. Everything left out remained grey. Circle size corresponds to original transmission length.</li>
+    
+                            </ul>
+                        </div>
+                        <div class='step' data-step='23'>
+                            <ul>
+                                <li class="break">Keep scrolling to see more.</li>
+    
+                            </ul>
+                        </div>
+                
+                </article>
+            </section>
+
+        <section id='credits'>
+                <div class="row outro">    
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                            <p>By the end of their walk, Neil and Buzz collected 47 pounds of samples, made geologic observations, deployed experiments, shot photographs and video, answered a phone call from President&nbsp;Nixon, and inspected the condition of the spacecraft that would soon blast them back to Michael&nbsp;Collins.<br>
+                            <br>
+                            But first Neil and Buzz needed rest. They stayed on the moon for one night to eat dinner (beef stew, cream of chicken soup, date fruitcake, grape punch) and sleep. Neil sat on the engine cover and slung a makeshift hammock with a harness. Buzz curled up beneath him on the floor.<br>
+                            <br>The rest period was almost a complete loss. Glaring lights, noisy pumps, blaring alarms, and cold suits prevented Neil from falling asleep. Buzz only managed a "couple hours of mentally fitful drowsing."<br>
+                            </p>
+                        </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-2">
+                                <img src="media/sleep.jpg" id="sleep" width="100%"><br>
+                        </div>
+                </div>
+    
+                <div class="row stinger">
+                    <div class="col-6">
+                        <h2>credits</h2>
+                        <p>Illustration, commentary, design, and code by <a href="https://infowetrust.com/about" target="_blank">RJ&nbsp;Andrews</a>. He made all the GIFs too.<br>
+                        <br>
+                        See more data stories at <a href="https://infowetrust.com" target="_blank">INFO WE TRUST</a> where you can <a href="https://infowetrust.com/contact/" target="_blank">contact</a> RJ directly</p>
+                    </div>    
+
+                    <div class="col-6">
+                        <h2>share and follow</h2>
+                        <br>
+                        <!--Share on Twitter-->
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="See what happened on Neil &amp; Buzz&#39;s Moonwalk" data-url="https://infowetrust.com/tranquility/" data-via="infowetrust" data-hashtags="#Apollo11 #Apollo50th" data-related="infowetrust" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <!--Follow @infowetrust on Twitter-->
+                        <a href="https://twitter.com/infowetrust?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @infowetrust</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <br><br>
+                        <div class="fb-like" data-href="https://infowetrust.com/tranquility" data-width="100" data-layout="button" data-action="like" 
+                        data-size="large" data-show-faces="false" data-share="true"></div>
+                        <br><br>
+                        <!-- Begin Mailchimp Signup Form -->
+                        <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+                        <div id="mc_embed_signup">
+                        <form action="https://infowetrust.us20.list-manage.com/subscribe/post?u=73ed7440b980e92902495def9&amp;id=42fd441326" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                            <h1>RJ's Inspiring Viz Newsletter</h1>
+                            <br>
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email Address </label>
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                        </div>
+                            <div id="mce-responses" class="clear">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_73ed7440b980e92902495def9_42fd441326" tabindex="-1" value=""></div>
+                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                            <br>
+                            <p>View <a href="https://us20.campaign-archive.com/home/?u=73ed7440b980e92902495def9&id=42fd441326" title="View previous campaigns" target="_blank">previous newsletters.</a></p>
+                            </div>
+                        </form>
+                        </div>
+                        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                        <!--End mc_embed_signup-->
+                    </div>
+            </div>
+        
+            
+
+            <div class="row stinger">
+                    
+                    <div class="col-12">
+                        <h2>data provenance</h2>
+                        <p>Excerpts are from the transcription of the Apollo&nbsp;11 mission Air-to-Ground <a href="https://www.hq.nasa.gov/alsj/a11/a11transcript_tec.html" target="_blank">Voice Transmission</a>.<br>
+                        <br>
+                        Supporting NASA reference material includes the Moonwalk EVA 
+                        <a href="https://youtu.be/S9HdPi9Ikhk" target="_blank">Mission Video</a>, 
+                        two USGS maps: Traverse
+                        <a href="https://astrogeology.usgs.gov/search/map/Moon/Apollo/Traverse/AP11trav" target="_blank">Map</a> and Photo & Television 
+                        <a href="https://astrogeology.usgs.gov/search/map/Moon/Apollo/Traverse/AP11tv" target="_blank">Map</a>, and the Apollo&nbsp;11 
+                        <a href="https://www.hq.nasa.gov/alsj/a11/images11.html" target="_blank">Image Library</a>.</p>
+                    </div>
+                </div>
+
+                <div class="row stinger">
+                    <div class="col-12">
+                            <h2>About this project</h2>
+                            <p>This project was motivated by the realization that I had no idea what happened on the Apollo&nbsp;11 Moonwalk beyond Neil's <i>ONE SMALL STEP</i> and that iconic flag photo. How long were they out there? How far did they explore? What exactly did they do. To answer these questions a wealth of resources were brought together. While superficially hand illustrated, the project's chief planning documents include a 3D model, layered map, and detailed timeline of the Moonwalk. Read the <a href="https://infowetrust.com/tranquility-design" target="_blank">design essay</a> to learn more about the making of this data story. <i>-RJ</i></p>
+                        </div>
+                    </div>
+                <div class="row stinger">
+                    <div class="col-12">
+                            <img src="media/astros.jpg" id="astros" width="100%">
+                    </div>
+                </div>
+                    
+            </section>
+
+        <div class="footer-bar">
+            <span>An INFO WE TRUST "data adventure!" © RJ Andrews 2019, All Rights Reserved.</span>
+        </div>
+
+
+	</main>
 	
-	<!--Side Pages show detail-->
-	<div id="sidePanelsR">
-		<div id="sidePanelR" class="sideR">
-			<div class="redline"></div>
-			<div class="sideBtn">
-				<img class="priorBtn" href="javascript:void(0)" src="images/priorBtn.png" alt=""/>
-				<img class="closeBtn" href="javascript:void(0)" src="images/closeBtn.png" alt=""/>
-				<img class="nextBtn" href="javascript:void(0)" src="images/nextBtn.png" alt=""/>
-			</div>
-			<div class="redline"></div>
-			<p id="sidePanelTagR" class="tagText" style="background-color: rgba(0,0,0,0);"></p>
-			<p id="sidePanelTextR" class="realText"></p>
-			<div class="redline"></div>
-			<p id="sidePanelShareR" class="shareText" style="background-color: rgba(0,0,0,0);"></p>
-			<div class="redline"></div>
-		</div>
-	</div>
+	<!-- <div class='debug'></div> -->
+	<script src='https://unpkg.com/d3@5.9.1/dist/d3.min.js'></script>
+    <script src='https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='stickyfill.min.js'></script>
+    <script src='scrollama.min.js'></script>
 
-	<div id="sidePanelsL">
-		<div id="sidePanelL" class="sideL">
-			<div class="redline"></div>
-			<div class="sideBtn">
-				<img class="priorBtn" href="javascript:void(0)" src="images/priorBtn.png" alt=""/>
-				<img class="closeBtn" href="javascript:void(0)" src="images/closeBtn.png" alt=""/>
-				<img class="nextBtn" href="javascript:void(0)" src="images/nextBtn.png" alt=""/>
-			</div>
-			<div class="redline"></div>
-			<p id="sidePanelTagL" class="tagText" style="background-color: rgba(0,0,0,0);"></p>
-			<p id="sidePanelTextL" class="realText"></p>
-			<div class="redline"></div>
-			<p id="sidePanelShareL" class="shareText" style="background-color: rgba(0,0,0,0);"></p>
-			<div class="redline"></div>
-		</div>
-	</div>
-</div>
-	
-	<script> w3.includeHTML();</script>
-	<script src="viz.js"></script>
-
-	<script id="tagTemplate" type="text/template">
-		<em>{{workDate}}: {{tag}}</em>
-	</script>
-
-	<script id="textTemplate" type="text/template" style="background:rgba(0,0,0,0);">
-		<img class="filigree" src="images/filigree.png" alt=""/>
-		<img class="original" src="{{original}}" alt=""/>
-		<img class="filigree" src="images/filigree.png" alt=""/>
-		<hr style="height:0.5ex; visibility:hidden;" />
-		<b>{{work}}</b>, {{workDate}}<br><i>{{subtitle}}</i><br>
-		<hr style="height:0.5ex; visibility:hidden;" />
-		<b>{{name}}</b><br>{{life}}<br>
-		<br>
-		{{paragraph}} <a href="{{link}}" target="_blank" style="background:rgba(0,0,0,0);font-style:italic;">☞ Source</a><br>
-		<hr style="height:0.5ex; visibility:hidden;" />
-	</script>
-	
-	<script id="shareTemplate" type="text/template" style="background:rgba(0,0,0,0);">
-		<i>Share this work:</i><br>
-		http://infowetrust.com/scroll/#{{slug}}
-	</script>
-	
+    <script src='index.js'></script>
 </body>
+
+</html>
